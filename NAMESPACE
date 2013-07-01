@@ -1,0 +1,4 @@
+useDynLib(scar)
+export(scar)
+S3method( "predict", "scar")
+S3method( "plot", "scar")

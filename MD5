@@ -1,0 +1,12 @@
+afe06cb2ef63246baddd3150d688adad *DESCRIPTION
+deeaddd2ba8c5160fe2e37cb6a596762 *NAMESPACE
+0b0b8f22e96ead2b7b409d58fe595149 *R/aggsum.R
+9805b90c3e212e9cfa49c1192e5a0eb7 *R/plot.scar.R
+0dc8b1a1b9371410046eae90c3ff9572 *R/predict.scar.R
+57baa0bd1d1c4381cb9def08083e61e9 *R/scar.R
+095f14ab88536156903de19313c34223 *man/plot.scar.Rd
+575561e53c5c5228bf35c4e86ad99c5e *man/predict.scar.Rd
+3508e2dc71567fc412a1a0a91914c03b *man/scar-internal.Rd
+29e128f0fe0ba689407982e45671fd67 *man/scar-package.Rd
+266c2b8892ffb49fbc1e3a81b3a2cfd4 *man/scar.Rd
+639b298d40f03d29698d0db20eb61f51 *src/AggSum.c
