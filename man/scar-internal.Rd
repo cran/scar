@@ -1,7 +1,7 @@
 \name{scar-internal}\title{Internal shape-constrained additive regression functions}
 \alias{aggsum}
 \description{
-  Internal functions for \pkg{scar}
+  Internal functions for the package \pkg{scar}
 }
 \details{
   These internal functions are not to be called by the user. 

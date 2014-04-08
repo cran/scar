@@ -1,4 +1,6 @@
 useDynLib(scar)
-export(scar)
+export(scar,scair)
 S3method( "predict", "scar")
 S3method( "plot", "scar")
+S3method( "predict", "scair")
+S3method( "plot", "scair")

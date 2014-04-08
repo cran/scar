@@ -3,42 +3,44 @@
 
 \title{Plot components of a "scar" object}
 
-\description{This function takes a fitted \pkg{scar} object produced 
+\description{This function takes a fitted \code{scar} object produced 
      by \code{\link{scar}} and plots the component functions that make it 
      up, on the scale of the additive predictors.
 }
 
 \usage{
-\method{plot}{scar}(x, addp = TRUE, ...)
+\method{plot}{scar}(x, whichplot = 1:d, addp = TRUE, ...)
 }
 
 \arguments{
-     \item{x}{a fitted \pkg{scar} object produced 
-       by \code{\link{scar}}}
+     \item{x}{A fitted \code{scar} object produced 
+       by \code{\link{scar}}.}
 
-     \item{addp}{a \code{logical} scalar that indicates whether the data points 
+     \item{whichplot}{A numeric vector indicates the required plots.}
+
+     \item{addp}{A \code{logical} scalar that indicates whether the data points 
        should be plotted as circles on the fitted curves of each component.}
 
-     \item{...}{Other arguments passed to \code{plot}}
+     \item{...}{Other arguments passed to \code{plot}.}
 }
 
 \details{
-     A plot is produced for each additive component in the fitted \pkg{scar} 
+     A plot is produced for each additive component in the fitted \code{scar} 
      object. Each function is plotted in the range of the observed covariates, 
      with the identifiability condition satisfied (see Details of \code{\link{scar}}).
 
-     It can be invoked by calling \code{"plot(x)"} for an object x of the
-     \pkg{scar} class, or directly by calling \code{"plot.scar(x)"} regardless
+     It can be invoked by calling \code{"plot(x)"} for an object \code{x} of the
+     \code{scar} class, or directly by calling \code{"plot.scar(x)"} regardless
      of the class of the object.
 }
 
 \author{Yining Chen and Richard Samworth}
 
-\seealso{\code{\link{scar}}, \code{\link{predict.scar}}}
+\seealso{\code{\link{scar}}, \code{\link{predict.scar}}, \code{\link{plot.scair}}}
 
 \examples{
-## see examples for the function scar
+## See examples for the function scar
 }
 
-\keyword{ dplot }
 \keyword{ hplot }
+\keyword{ dplot }

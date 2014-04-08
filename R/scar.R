@@ -49,7 +49,7 @@ scar <- function(x,y,shape=rep("l",d), family=gaussian(), weights=rep(1,length(y
                       else break
                     }
                 }
-            } else {# must be gaussian family so no need to do anything
+            } else {# must be gaussian / gamma family so no need to do anything
             }
         }
 
@@ -85,8 +85,8 @@ scar <- function(x,y,shape=rep("l",d), family=gaussian(), weights=rep(1,length(y
                Ninitialinactive = Ninitialinactive + 1
            }
         }
-
-        # initial run 
+  
+	# initial run 
         obj = glm.fit(xinactive,y,family=family,control=list(epsilon=epsilon),weights=weights,intercept = FALSE)
         iter = 1
 
@@ -159,7 +159,7 @@ scar <- function(x,y,shape=rep("l",d), family=gaussian(), weights=rep(1,length(y
                 break
             }
 
-            # try a initial run with new elements added
+     	    # try a initial run with new elements added
             wtsstart = c(obj$coefficients,0)
             objnew = glm.fit(xinactive,y,family=family,control=list(epsilon=epsilon),start=wtsstart,weights=weights,intercept = FALSE)
 
@@ -170,7 +170,9 @@ scar <- function(x,y,shape=rep("l",d), family=gaussian(), weights=rep(1,length(y
                 if(ninact <= Ninitialinactive) break else
                 if (prod(wtsnew[(Ninitialinactive+1):ninact]>0)==1) break else 
                 {
-                    ratio = wtsstart/(wtsstart-wtsnew)
+                    wtdenom = wtsstart - wtsnew
+                    wtdenom = wtdenom * (abs(wtdenom) > epsilon) - epsilon * (wtdenom >= -epsilon) * ( wtdenom <=0) + epsilon * (wtdenom <= epsilon) * (wtdenom >0)
+                    ratio = wtsstart/wtdenom
                     ratio = (ratio > 0)*(wtsnew <= 0)*ratio + 1*(wtsnew>0) + 1*(ratio<=0) 
                     ratio = min(ratio[(Ninitialinactive+1):ninact])
                     wtsstart = wtsstart * (1-ratio) + ratio*wtsnew
@@ -197,15 +199,15 @@ scar <- function(x,y,shape=rep("l",d), family=gaussian(), weights=rep(1,length(y
         for(j in 1:d){
            comwts = matrix((inactive <= j*n)*(inactive > (j-1)*n)*obj$coefficients,ncol=1)
            componentfit[,j]=xinactive %*% comwts 
-	   if (min(x[,j]) <=0 && max(x[,j]) >=0) {
+ 	   if (min(x[,j]) <=0 && max(x[,j]) >=0) {
 		constantj = approx(x[,j],componentfit[,j],0,rule=2)$y
 		componentfit[,j] = componentfit[,j] - constantj
 		constant = constant + constantj
-	   } else {
+  	   } else {
 		constantj = approx(x[,j],componentfit[,j],mean(componentfit[,j]),rule=2)$y
 		componentfit[,j] = componentfit[,j] - constantj
-		constant = constant + constantj		
-	   }	   
+		constant = constant + constantj
+   	   }   
         }
         deviance = obj$deviance
         nulldeviance = obj$nulldeviance

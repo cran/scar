@@ -13,7 +13,7 @@ Each component function of the additive predictors is assumed to belong
 to one of the nine possible shape restrictions. The estimator's value at the 
 data points is unique.
 
-The output is an object of class \pkg{scar} which contains all the information 
+The output is an object of class \code{scar} which contains all the information 
 needed to plot the estimator using the \code{\link[=plot.scar]{plot}} method, or 
 to evaluate it using the \code{\link[=predict.scar]{predict}} method.
 }
@@ -25,9 +25,9 @@ scar(x, y, shape = rep("l", d), family = gaussian(),
 
 \arguments{
 \item{x}{Observed covariates in \eqn{R^d}, in the form of an \eqn{n \times d}{n x d} 
-         numeric \code{matrix}}  
+         numeric \code{matrix}.}
 
-\item{y}{Observed responses, in the form of a numeric \code{vector} of length \eqn{n}}
+\item{y}{Observed responses, in the form of a numeric \code{vector} of length \eqn{n}.}
 
 \item{shape}{A vector that specifies the shape restrictions for each component function,
          in the form of a string vector of length \eqn{d}{d}. The string allowed and its 
@@ -51,19 +51,18 @@ scar(x, y, shape = rep("l", d), family = gaussian(),
 
 	 \code{ccvde}:	 concave and decreasing}
 
-\item{family}{a description of the error distribution and link function to
+\item{family}{A description of the error distribution and link function to
           be used in the model. This can be a character string naming a
           family function, a family function or the result of a call to
           a family function.  Currently only the following five common 
 	  exponential families are allowed: Gaussian, Binomial, Poisson,
-          Inverse Gaussian and Gamma. By default the canonical link function 
-          is used.}
+          and Gamma. By default the canonical link function is used.}
 
-\item{weights}{an optional vector of prior weights to be used when maximising the 
+\item{weights}{An optional vector of prior weights to be used when maximising the 
           likelihood. It is a numeric vector of length \eqn{n}{n}. By default 
           equal weights are used.}
 
-\item{epsilon}{positive convergence tolerance epsilon when performing the 
+\item{epsilon}{Positive convergence tolerance epsilon when performing the 
           iteratively reweighted least squares (IRLS) method at each iteration of 
           the active set algorithm.  See \code{\link[stats:glm.control]{glm.control}} 
           for more details.}
@@ -103,24 +102,24 @@ scar(x, y, shape = rep("l", d), family = gaussian(),
   \cite{Groeneboom, Jongbloed and Wellner (2008)}.
 }
 
-\value{An object of class \pkg{scar}, with the following components:
-  \item{x}{covariates copied from input}
-  \item{y}{response copied from input}
-  \item{shape}{shape vector copied from input}
-  \item{weights}{the vector of weights copied from input}
-  \item{family}{the exponential family copied from input}
-  \item{componentfit}{value of the fitted component function at each observed 
+\value{An object of class \code{scar}, with the following components:
+  \item{x}{Covariates copied from input.}
+  \item{y}{Response copied from input.}
+  \item{shape}{Shape vector copied from input.}
+  \item{weights}{The vector of weights copied from input.}
+  \item{family}{The exponential family copied from input.}
+  \item{componentfit}{Value of the fitted component function at each observed 
           covariate, in the form of an \eqn{n \times d}{n x d} numeric \code{matrix},
           where the element at the \eqn{i}-th row and the \eqn{j}-th column
           is the value of \eqn{f_j} at the \eqn{j}-th coordinate of \eqn{X_i},
           with the identifiability condition satisfied (see Details)}
-  \item{constant}{the estimated value of the constant \eqn{c} in the 
-          additive function \eqn{f} (see Details)}
-  \item{deviance}{up to a constant, minus twice the maximised log-likelihood.
+  \item{constant}{The estimated value of the constant \eqn{c} in the 
+          additive function \eqn{f} (see Details).}
+  \item{deviance}{Up to a constant, minus twice the maximised log-likelihood.
           Where applicable, the constant is chosen to make the saturated
           model to have zero deviance. See also \code{\link[stats:glm]{glm}}.}
-  \item{nulldeviance}{the deviance for the null model}
-  \item{iter}{the total number of iterations of the active set algorithm}
+  \item{nulldeviance}{The deviance for the null model.}
+  \item{iter}{Total number of iterations of the active set algorithm}.
 }
 
 \references{
@@ -128,19 +127,22 @@ Groeneboom, P., Jongbloed, G. and Wellner, J.A. (2008).
      The Support Reduction Algorithm for Computing Non-Parametric Function 
      Estimates in Mixture Models. Scandinavian Journal of Statistics, 35, 385-399.
 
-Hastie, T. and Tibshirani, R. (1990) Generalized Additive Models. 
+Hastie, T. and Tibshirani, R. (1990). Generalized Additive Models. 
      Chapman and Hall, London.
 
-Nocedal, J., and Wright, S. J. (2006) Numerical Optimization, 2nd edition. 
+Meyer, M. C. (2013).  Semi-parametric Additive Constrained Regression.
+     Journal of nonparametric statistics, 25, 715-743.
+
+Nocedal, J., and Wright, S. J. (2006). Numerical Optimization, 2nd edition. 
      Springer, New York.
 
 Robertson, T., Wright, F. T. and Dykstra, R. L. (1988). 
      Order Restricted Statistical Inference. Wiley, New York.
 
-Venables, W. N. and Ripley, B. D. (2002) Modern Applied
+Venables, W. N. and Ripley, B. D. (2002). Modern Applied
      Statistics with S. Springer, New York.
 
-Wood, S.N. (2004) Stable and efficient multiple smoothing parameter estimation 
+Wood, S.N. (2004). Stable and efficient multiple smoothing parameter estimation 
      for generalized additive models. Journal of American Statistical Association, 
      99, 673-686.
 }
@@ -175,21 +177,22 @@ Wood, S.N. (2004) Stable and efficient multiple smoothing parameter estimation
 
 
 \seealso{
+  \code{\link{plot.scar}}, \code{\link{predict.scar}}, \code{\link{scair}},
   \code{\link[Iso:pava]{Iso}}, 
   \code{\link[scam:scam-package]{scam}},
-  \code{\link[mgcv:mgcv-package]{mgcv}}, 
-  \code{\link[gam:gam]{gam}}, 
-  \code{\link[stats:glm]{glm}}  
+  \code{\link[mgcv:mgcv-package]{mgcv}},
+  \code{\link[gam:gam]{gam}},  
+  \code{\link[stats:glm]{glm}}
 }
 
 \examples{
-## An example in the Poission additive regression setting
-## define the additive function f on the scale of the predictors
+## An example in the Poission additive regression setting:
+## Define the additive function f on the scale of the predictors
 f<-function(x){
   return(1*abs(x[,1]) + 2*(x[,2])^2 + 3*(abs(x[,3]))^3) 
 }
 
-## simulate the covariates and the responses
+## Simulate the covariates and the responses
 ## covariates are drawn uniformly from [-1,1]^3
 set.seed(0)
 d = 3
@@ -202,10 +205,10 @@ y = sapply(f(x),rpoisson)
 shape=c("cvx","cvx","cvx")
 object = scar(x,y,shape=shape, family=poisson())
 
-## plot each component of the estimatied additive function
+## Plot each component of the estimatied additive function
 plot(object)
 
-## evaluate the estimated additive function at 10^4 random points 
+## Evaluate the estimated additive function at 10^4 random points 
 ## drawing from the interior of the support
 testx = matrix((runif(10000*d)*1.96-0.98),ncol=d)
 testf = predict(object,testx)
@@ -218,4 +221,3 @@ mean(abs(testf-f(testx)))
 \keyword{ multivariate }
 \keyword{ nonparametric }
 \keyword{ optimize }
-
