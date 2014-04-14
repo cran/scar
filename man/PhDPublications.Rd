@@ -26,15 +26,19 @@ Imported directly from CRAN package AER (Kleiber and Zeileis, 2013) for the sake
 }
 
 \references{
+Chen, Y. and Samworth, R. J. (2014).
+Generalised additive and index models with shape constraints. 
+arXiv:1404.2957.
+
 Kleiber, C. and  Zeileis, A. (2013).
-\emph{AER: Applied Econometrics with R}.
+\emph{AER: applied econometrics with R}.
 R package version 1.2-0, http://cran.r-project.org/web/packages/AER/
 
 Long, J.S. (1990).
 \emph{Regression Models for Categorical and Limited Dependent Variables}.
 Thousand Oaks: Sage Publications.
 
-Long, J.S. (1997). The Origin of Sex Differences in Science.
+Long, J.S. (1997). The origin of sex differences in science.
 \emph{Social Forces}, \bold{68}, 1297--1315.
 }
 

@@ -33,10 +33,10 @@ scair(x,y,shape=rep("l",1), family=gaussian(), weights=rep(1,length(y)),
 \item{y}{Observed responses, in the form of a numeric \code{vector} of length \eqn{n}.}
 
 \item{shape}{A vector that specifies the shape restrictions for additive component function
-	 of each index, in the form of a string vector of length \eqn{m}{m}. Here for the 
-	 sake of identifiability, we require the number of indices \eqn{m \le d}{m <= d}. 
-         The shape constraints we considered (with their coresponding abbreviations used 
-         in \code{shape}) are listed below:
+	 of each index (also called the ridge function), in the form of a string vector of 
+         length \eqn{m}{m}. Here for the sake of identifiability, we require the number of 
+         indices \eqn{m \le d}{m <= d}. The shape constraints we considered (with their 
+         coresponding abbreviations used in \code{shape}) are listed below:
 
 	 \code{l}:	 linear
 
@@ -77,7 +77,8 @@ scair(x,y,shape=rep("l",1), family=gaussian(), weights=rep(1,length(y)),
 	  eigenvalue of all possible \eqn{A^T A} subject to identiability 
 	  conditions, where \eqn{A} is an index matrix. It should be smaller than 1. 
 	  This parameter is NOT needed when \eqn{d=1}, or the prediction function is
-	  convex or concave, or all the entries of the index matrix are non-negative.}
+	  convex or concave, or all the entries of the index matrix are non-negative
+          if all ridge functions are increasing or decreasing.}
 
 \item{indexgen}{It determines how the index matrices are generated in the stochastic
 	  search. If its value is "\code{unif}", then entries of the index matrices are drawn 
@@ -88,7 +89,8 @@ scair(x,y,shape=rep("l",1), family=gaussian(), weights=rep(1,length(y)),
 
 \item{allnonneg}{A boolean variable that specifies whether all the entries of the 
 	  index matrices are non-negative. If it is true, then \code{delta} is no
-	  longer needed.}
+	  longer needed in case the ridge functions are either all increasing, or all 
+          decreasing.}
 }
 
 \details{
@@ -116,6 +118,10 @@ scair(x,y,shape=rep("l",1), family=gaussian(), weights=rep(1,length(y)),
   implemented in \code{scar}. Therefore, this problem can be reduced to a finite-dimensional 
   optimisation problem. Here we apply a simple stochastic search strategy is proposed, though other methods, 
   such as downhill simplex, is also possible (and sometimes offers competitive performance).
+  All the implementaton details can be found in \cite{Chen and Samworth (2014)}, where theoretical 
+  justification of our estimator (i.e. uniform consistency) is also given.
+
+  For the identifiability of additive index models, we refer to \cite{Yuan (2011)}.
 }
 
 \value{An object of class \code{scair}, with the following components:
@@ -143,7 +149,12 @@ scair(x,y,shape=rep("l",1), family=gaussian(), weights=rep(1,length(y)),
 }
 
 \references{
-  See the references listed for \code{\link{scar}}.
+Chen, Y. and Samworth, R. J. (2014).
+     Generalised additive and index models with shape constraints. 
+     arXiv:1404.2957.
+
+Yuan, M. (2011). On the identifiability of additive index models. Statistica Sinica, 21, 1901-1911.
+
 }
 
 \author{Yining Chen and Richard Samworth}

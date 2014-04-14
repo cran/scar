@@ -97,9 +97,8 @@ scar(x, y, shape = rep("l", d), family = gaussian(),
   This problem can then be re-written as a concave optimisation problem, and 
   our function uses the active set algorithm to find out the maximum likelihood estimator. 
   A general introduction can be found in \cite{Nocedal and Wright (2006)}. 
-  Our algorithm can be viewed as a slight extension of the support 
-  reduction procedure proposed by 
-  \cite{Groeneboom, Jongbloed and Wellner (2008)}.
+  A detailed description of our algorithm can be found in \cite{Chen and Samworth (2014)}.
+  See also \cite{Groeneboom, Jongbloed and Wellner (2008)} for some theoretical supports.
 }
 
 \value{An object of class \code{scar}, with the following components:
@@ -123,14 +122,18 @@ scar(x, y, shape = rep("l", d), family = gaussian(),
 }
 
 \references{
+Chen, Y. and Samworth, R. J. (2014).
+     Generalised additive and index models with shape constraints. 
+     arXiv:1404.2957.
+
 Groeneboom, P., Jongbloed, G. and Wellner, J.A. (2008).
-     The Support Reduction Algorithm for Computing Non-Parametric Function 
-     Estimates in Mixture Models. Scandinavian Journal of Statistics, 35, 385-399.
+     The support reduction algorithm for computing non-parametric function 
+     estimates in mixture models. Scandinavian Journal of Statistics, 35, 385-399.
 
 Hastie, T. and Tibshirani, R. (1990). Generalized Additive Models. 
      Chapman and Hall, London.
 
-Meyer, M. C. (2013).  Semi-parametric Additive Constrained Regression.
+Meyer, M. C. (2013).  Semi-parametric additive constrained regression.
      Journal of nonparametric statistics, 25, 715-743.
 
 Nocedal, J., and Wright, S. J. (2006). Numerical Optimization, 2nd edition. 

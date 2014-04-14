@@ -30,10 +30,13 @@ scair <- function(x,y,shape=rep("l",1), family=gaussian(), weights=rep(1,length(
 
      ## try to determine whether delta is needed here - check whether the shape constraints imply a convex / concave function
 		ccvccx = 0		
-		if (prod((shape == "cvx") + (shape == "cvxin") +  (shape == "cvxde") + (shape == "l")) == 1 ) ccvccx = 1
-		if (prod((shape == "ccv") + (shape == "ccvin") +  (shape == "ccvde") + (shape == "l")) == 1 ) ccvccx = 1
-		
-		if((m == 1) || (ccvccx == 1) || (allnonneg == TRUE) || (min(eigen(t(w)%*%(w))$values) >= delta) ){
+		if (prod((shape == "cvx") + (shape == "cvxin") + (shape == "cvxde") + (shape == "l")) == 1 ) ccvccx = 1
+		if (prod((shape == "ccv") + (shape == "ccvin") + (shape == "ccvde") + (shape == "l")) == 1 ) ccvccx = 1
+     ## and check whether the ridge functions are either all increasing or all decreasing
+                inde = 0
+		if (prod((shape == "in") + (shape == "cvxin") + (shape == "ccvin")) == 1 ) inde = 1
+		if (prod((shape == "de") + (shape == "cvxde") + (shape == "ccvde")) == 1 ) inde = 1
+		if((m == 1) || (ccvccx == 1) || (inde == 1 && allnonneg == TRUE) || (min(eigen(t(w)%*%(w))$values) >= delta) ){
 			output = scar(x %*% w,y,shape=shape,family=family,weights=weights,epsilon=epsilon)
 			if(count == 0 || (output$deviance < mindeviance)) {
 				obj = output

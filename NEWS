@@ -1,6 +1,10 @@
 Changes in Version 0.2-0
-
-- Fixed a bug on the enlargement of the active set algorithm in function scar
+- Fixed a bug on the enlargement of the active set algorithm in function 'scar'
 - Added functions that can handle generalised additive index models
 - Added three datasets: PhD publication, Decathlon (raw) and Decathlon (scores) 
+
+Changes in Version 0.2-1
+- Main Arxiv reference added
+- Rewrote the option of the non-negativity on all entries of the index matrix 
+  in function 'scair' that deals with the additive index models  
 

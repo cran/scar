@@ -25,8 +25,8 @@ where a stochastic search algorithm is proposed to solve the problem.
   \tabular{ll}{
     Package: \tab scar\cr
     Type: \tab Package\cr
-    Version: \tab 0.2-0\cr
-    Date: \tab 2014-04-07\cr
+    Version: \tab 0.2-1\cr
+    Date: \tab 2014-04-14\cr
     License: \tab GPL(>=2)\cr
   }
 
@@ -73,14 +73,18 @@ Richard Samworth \email{r.samworth@statslab.cam.ac.uk}
 }
 
 \references{
+Chen, Y. and Samworth, R. J. (2014).
+     Generalised additive and index models with shape constraints. 
+     arXiv:1404.2957.
+
 Groeneboom, P., Jongbloed, G. and Wellner, J.A. (2008).
-     The Support Reduction Algorithm for Computing Non-Parametric Function 
-     Estimates in Mixture Models. Scandinavian Journal of Statistics, 35, 385-399.
+     The support reduction algorithm for computing non-parametric function 
+     estimates in mixture models. Scandinavian Journal of Statistics, 35, 385-399.
 
 Hastie, T. and Tibshirani, R. (1990) Generalized Additive Models. 
      Chapman and Hall, London.
 
-Meyer, M. C. (2013)  Semi-parametric Additive Constrained Regression.
+Meyer, M. C. (2013)  Semi-parametric additive constrained regression.
      Journal of nonparametric statistics, 25, 715-743.
 
 Nocedal, J., and Wright, S. J. (2006) Numerical Optimization, 2nd edition. 
