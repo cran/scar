@@ -8,3 +8,7 @@ Changes in Version 0.2-1
 - Rewrote the option of the non-negativity on all entries of the index matrix 
   in function 'scair' that deals with the additive index models  
 
+Changes in Version 0.2-2
+- Reference updated
+- Namespace file updated to compile with the new requirements
+- Maintainer's email address updated

@@ -97,7 +97,7 @@ scar(x, y, shape = rep("l", d), family = gaussian(),
   This problem can then be re-written as a concave optimisation problem, and 
   our function uses the active set algorithm to find out the maximum likelihood estimator. 
   A general introduction can be found in \cite{Nocedal and Wright (2006)}. 
-  A detailed description of our algorithm can be found in \cite{Chen and Samworth (2014)}.
+  A detailed description of our algorithm can be found in \cite{Chen and Samworth (2016)}.
   See also \cite{Groeneboom, Jongbloed and Wellner (2008)} for some theoretical supports.
 }
 
@@ -122,9 +122,8 @@ scar(x, y, shape = rep("l", d), family = gaussian(),
 }
 
 \references{
-Chen, Y. and Samworth, R. J. (2014).
-     Generalised additive and index models with shape constraints. 
-     arXiv:1404.2957.
+Chen, Y. and Samworth, R. J. (2016).  Generalized additive and index models with shape constraints.
+     Journal of the Royal Statistical Society: Series B, 78, 729-754.
 
 Groeneboom, P., Jongbloed, G. and Wellner, J.A. (2008).
      The support reduction algorithm for computing non-parametric function 
@@ -163,8 +162,7 @@ Wood, S.N. (2004). Stable and efficient multiple smoothing parameter estimation
 
   For the one-dimensional covariate, see the pool adjacent violators algorithm (PAVA)
   of \cite{Robertson, Wright and Dykstra (1998)} and the support reduction method of 
-  \cite{Groeneboom, Jongbloed and Wellner (2008)}. See also the R package 
-  \code{\link[Iso:pava]{Iso}}.
+  \cite{Groeneboom, Jongbloed and Wellner (2008)}. 
 
   A different approach to tackle this problem is to use splines. See the R package 
   \code{\link[scam:scam-package]{scam}}. We stress here that our approach is free 
@@ -180,12 +178,9 @@ Wood, S.N. (2004). Stable and efficient multiple smoothing parameter estimation
 
 
 \seealso{
-  \code{\link{plot.scar}}, \code{\link{predict.scar}}, \code{\link{scair}},
-  \code{\link[Iso:pava]{Iso}}, 
-  \code{\link[scam:scam-package]{scam}},
-  \code{\link[mgcv:mgcv-package]{mgcv}},
-  \code{\link[gam:gam]{gam}},  
-  \code{\link[stats:glm]{glm}}
+  \code{\link{plot.scar}}, \code{\link{predict.scar}}, \code{\link{scair}}, 
+  \code{\link[scam:scam-package]{scam}}, \code{\link[mgcv:mgcv-package]{mgcv}},
+  \code{\link[gam:gam]{gam}}, \code{\link[stats:glm]{glm}}
 }
 
 \examples{

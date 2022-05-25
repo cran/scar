@@ -25,8 +25,8 @@ where a stochastic search algorithm is proposed to solve the problem.
   \tabular{ll}{
     Package: \tab scar\cr
     Type: \tab Package\cr
-    Version: \tab 0.2-1\cr
-    Date: \tab 2014-04-14\cr
+    Version: \tab 0.2-2\cr
+    Date: \tab 2022-05-25\cr
     License: \tab GPL(>=2)\cr
   }
 
@@ -58,14 +58,13 @@ The methods proposed here were applied to the following datasets:
 }
 
 \author{
-Yining Chen (maintainer) \email{y.chen@statslab.cam.ac.uk}
+Yining Chen (maintainer) \email{y.chen101@lse.ac.uk}
 
 Richard Samworth \email{r.samworth@statslab.cam.ac.uk}
 }
 
 \note{
-  The authors gratefully acknowledge the assistance of Ming Yuan
-  at the University of Wisconsin-Madison for his insights into this problem.
+  The authors gratefully acknowledge the assistance of Ming Yuan for his insights into this problem.
 
   Thanks also go to Mary Meyer for kindly providing the authors with 
   her manuscript prior to its publication.
@@ -73,9 +72,8 @@ Richard Samworth \email{r.samworth@statslab.cam.ac.uk}
 }
 
 \references{
-Chen, Y. and Samworth, R. J. (2014).
-     Generalised additive and index models with shape constraints. 
-     arXiv:1404.2957.
+Chen, Y. and Samworth, R. J. (2016).  Generalized additive and index models with shape constraints.
+     Journal of the Royal Statistical Society: Series B, 78, 729-754.
 
 Groeneboom, P., Jongbloed, G. and Wellner, J.A. (2008).
      The support reduction algorithm for computing non-parametric function 
@@ -108,9 +106,7 @@ Wood, S. N. (2004) Stable and efficient multiple smoothing parameter estimation
 \keyword{ optimize }
 
 \seealso{
-  \code{\link{scar}}, \code{\link{scair}},
-  \code{\link[Iso:pava]{Iso}},  
-  \code{\link[scam:scam-package]{scam}},  
+  \code{\link{scar}}, \code{\link{scair}}, \code{\link[scam:scam-package]{scam}},  
   \code{\link[stats:glm]{glm}}  
 }
 

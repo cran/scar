@@ -118,7 +118,7 @@ scair(x,y,shape=rep("l",1), family=gaussian(), weights=rep(1,length(y)),
   implemented in \code{scar}. Therefore, this problem can be reduced to a finite-dimensional 
   optimisation problem. Here we apply a simple stochastic search strategy is proposed, though other methods, 
   such as downhill simplex, is also possible (and sometimes offers competitive performance).
-  All the implementaton details can be found in \cite{Chen and Samworth (2014)}, where theoretical 
+  All the implementaton details can be found in \cite{Chen and Samworth (2016)}, where theoretical 
   justification of our estimator (i.e. uniform consistency) is also given.
 
   For the identifiability of additive index models, we refer to \cite{Yuan (2011)}.
@@ -149,9 +149,8 @@ scair(x,y,shape=rep("l",1), family=gaussian(), weights=rep(1,length(y)),
 }
 
 \references{
-Chen, Y. and Samworth, R. J. (2014).
-     Generalised additive and index models with shape constraints. 
-     arXiv:1404.2957.
+Chen, Y. and Samworth, R. J. (2016).  Generalized additive and index models with shape constraints.
+     Journal of the Royal Statistical Society: Series B, 78, 729-754.
 
 Yuan, M. (2011). On the identifiability of additive index models. Statistica Sinica, 21, 1901-1911.
 

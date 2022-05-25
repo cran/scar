@@ -1,5 +1,4 @@
 predict.scair <-function(object,newdata,type = c("link", "response"),rule=1,...){
-	library(stats)
 	n=nrow(object$x)
 	d=ncol(object$x)
 	m=length(object$shape)

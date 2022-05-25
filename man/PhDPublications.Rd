@@ -26,9 +26,8 @@ Imported directly from CRAN package AER (Kleiber and Zeileis, 2013) for the sake
 }
 
 \references{
-Chen, Y. and Samworth, R. J. (2014).
-Generalised additive and index models with shape constraints. 
-arXiv:1404.2957.
+Chen, Y. and Samworth, R. J. (2016).  Generalized additive and index models with shape constraints.
+     Journal of the Royal Statistical Society: Series B, 78, 729-754.
 
 Kleiber, C. and  Zeileis, A. (2013).
 \emph{AER: applied econometrics with R}.
@@ -39,7 +38,7 @@ Long, J.S. (1990).
 Thousand Oaks: Sage Publications.
 
 Long, J.S. (1997). The origin of sex differences in science.
-\emph{Social Forces}, \bold{68}, 1297--1315.
+\emph{Social Forces}, 68, 1297--1315.
 }
 
 \examples{
